@@ -50,14 +50,14 @@ chrome.history.search({
 },
 function(historyItems) {
   var ct = 0;
+  var dict = {};
   // For each history item, get details on all visits.
   for (var i = 0; i < historyItems.length; ++i) {
     //var url = historyItems[i].url;
     //https://w3collective.com/get-domain-name-url-javascript/
     let domain = (new URL(historyItems[i].url)).hostname.replace('www.','');
     //https://stackoverflow.com/questions/18690814/how-to-increment-an-object-property-value-if-it-exists-else-set-the-initial-val
-    dict[key] = (dict[key] || 0) + 1;
-    console.log(url);
+    dict[domain] = (dict[domain] || 0) + 1;
     ct++;
      // do whatever you want with this visited url
   }

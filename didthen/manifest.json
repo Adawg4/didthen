@@ -1,0 +1,31 @@
+{
+    // Comments are accepted in the manifest, even though it is JSON.
+    "manifest_version": 3,
+    "name": "Chrome Extension v3 Starter",
+    "description": "A minimal example of a chrome extension using manifest v3",
+    "version": "0.0.1",
+    "chrome_url_overrides": {
+        "newtab": "home.html"
+    },
+    "icons": {
+        "16": "logo/logo.jpg",
+        "48": "logo/logo.jpg",
+        "128": "logo/logo.jpg"
+    },
+    "options_page": "settings/settings.html",
+    "action": {
+        "default_title": "didthen",
+        "default_popup": "popup/popup.html"
+    },
+    "permissions": [],
+    "host_permissions": [
+        "*://*/*"
+    ],
+    "background": {
+        "service_worker": "service-worker.js"
+    },
+    "content_scripts": [{
+        "js": ["foreground.js"],
+        "matches": ["https://github.com/*"]
+    }]
+}

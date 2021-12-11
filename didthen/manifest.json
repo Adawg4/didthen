@@ -17,7 +17,7 @@
         "default_title": "didthen",
         "default_popup": "popup/popup.html"
     },
-    "permissions": [],
+    "permissions": ["history"],
     "host_permissions": [
         "*://*/*"
     ],

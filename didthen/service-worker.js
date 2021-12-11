@@ -31,3 +31,34 @@ importScripts('service-worker-utils.js')
     });
   }
 });*/
+//https://thisinterestsme.com/javascript-one-week-ago/
+//Get today's date using the JavaScript Date object.
+var ourDate = new Date();
+
+//Change it so that it is 7 days in the past.
+var pastDate = ourDate.getDate() - 1;
+console.log(ourDate.getDate());
+ourDate.setDate(pastDate);
+ourDate = Math.round(ourDate / 1000);
+
+//https://stackoverflow.com/questions/24894627/how-to-get-browsing-history-using-history-api-in-chrome-extension
+//https://stackoverflow.com/questions/22225913/how-can-i-get-my-entire-history-with-chrome-history-search/22262748
+chrome.history.search({
+  'text': '',               // Return every history item....
+  //'startTime': ourDate,  // that was accessed less than one week ago.
+  'maxResults': 0,        // Optionally state a limit
+},
+function(historyItems) {
+  var ct = 0;
+  // For each history item, get details on all visits.
+  for (var i = 0; i < historyItems.length; ++i) {
+    var url = historyItems[i].url;
+    let domain = (new URL(url));
+    console.log(url);
+    ct++;
+     // do whatever you want with this visited url
+  }
+  console.log(ct);
+ });
+
+ // put in the home script and whenever a user opens it up idk 

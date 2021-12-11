@@ -61,7 +61,10 @@ function(historyItems) {
     ct++;
      // do whatever you want with this visited url
   }
-  console.log(ct);
+  console.log(dict);
  });
+
+
+    
 
  // put in the home script and whenever a user opens it up idk 

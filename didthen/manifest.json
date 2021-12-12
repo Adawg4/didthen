@@ -23,9 +23,5 @@
     ],
     "background": {
         "service_worker": "service-worker.js"
-    },
-    "content_scripts": [ {
-      "matches": ["home.html"],
-      "js": ["apexcharts.js"]
-    } ]
+    }
 }
